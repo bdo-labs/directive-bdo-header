@@ -1,0 +1,16 @@
+<!-- bdo-header.html -->
+<bdo-logo color="black"></bdo-logo>
+<menu class="main">
+  <nav>
+    <a ng-repeat="item in menu.main.items"
+      ng-click="menu.main.select($index)"
+      ng-class="{active: $index == menu.main.selected}"
+      ui-sref="{{item.state}}">
+      {{item.title}}
+    </a>
+  </nav>
+</menu>
+<menu ng-if="menu.dropdowns.length">
+  <dropdown menu="dropdown" ng-repeat="dropdown in menu.dropdowns"></dropdown>
+</menu>
+<!-- End bdo-header.html -->
